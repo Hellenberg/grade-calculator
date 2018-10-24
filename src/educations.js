@@ -1,5 +1,5 @@
 export default {
-    "natur": [
+    "Naturvetenskapsprogrammet": [
         {
             "name": "Engelska A",
             "points": 100,
@@ -25,7 +25,7 @@ export default {
             "required": false
         }
     ],
-    "samhällsprogrammet": [
+    "Samhällsvetenskapsprogrammet": [
         {
             "name": "Engelska A",
             "points": 100,
