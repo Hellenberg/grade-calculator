@@ -1,10 +1,11 @@
 .calculatedGrade {
     display: grid;
-    grid-gap: 15px;
+    grid-gap: 20px;
     grid-template-rows: 34px;
+    font-size: 20px;
   }
 
-  input {
+  .merit-points {
     font-size: 16px;
     height: 34px;
     border: 1px solid #ccc;

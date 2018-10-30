@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import  styles from './CalculatedGrade.css';
+import './CalculatedGrade.css';
 
 export class CalculatedGrade extends Component {
 
@@ -13,7 +13,7 @@ export class CalculatedGrade extends Component {
                 </div>
                 <div>
                     Lägg till meritpoäng:
-                    <input classNames={styles.input} alt='Antal poäng' type='number' min="0" max="2.5" value={this.props.meritPoints} onChange={this.props.handleMeritPointsChange}></input>
+                    <input className='merit-points' alt='Antal poäng' type='number' min="0" max="2.5" value={this.props.meritPoints} onChange={this.props.handleMeritPointsChange}></input>
                 </div>
                 <div>
                     Ditt totala meritvärde är:

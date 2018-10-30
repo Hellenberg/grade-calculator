@@ -135,6 +135,17 @@ class Courses extends Component {
     renderCourses() {
         return (
             <div className='coursesGrid'>
+                <div className='course course-heading'>
+                    <div>
+                        Kursnamn
+                    </div>
+                    <div>
+                        Poäng
+                    </div>
+                    <div>
+                        Betyg
+                    </div>
+                </div>
                 {this.state.courses.map((name, index) => {
                     return <div key={index}>{this.renderCourse(index)}</div>
                 })}
