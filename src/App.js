@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import fetch from 'node-fetch';
+
 import './App.css';
 import {CalculatedGrade} from './CalculatedGrade';
 import educationData from './educations';
@@ -50,11 +52,10 @@ class Courses extends Component {
     delete(i) {
         const courses = this.state.courses;
         if (courses[i].required) {
-            alert('Kursen är obligatorisk för att få högskolebehörighet!');
-        } else {
-            courses.splice(i, 1);
-            this.setState({ courses: courses });
+            alert('Notera att du behöver vara godkänd i kursen för att få högskolebehörighet!');
         }
+        courses.splice(i, 1);
+        this.setState({ courses: courses });
     }
 
     handleMeritPointsChange(event) {

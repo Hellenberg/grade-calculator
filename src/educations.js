@@ -86,7 +86,7 @@ export default {
         },
         {
             "name": "Fysik 1a",
-            "points": 100,
+            "points": 150,
             "grade": "F",
             "required": false
         },
@@ -99,26 +99,92 @@ export default {
     ],
     "Samhällsvetenskapsprogrammet": [
         {
-            "name": "Engelska A",
+            "name": "Engelska 5",
             "points": 100,
             "grade": "F",
             "required": true
         },
         {
-            "name": "Engelska B",
+            "name": "Engelska 6",
             "points": 100,
             "grade": "F",
             "required": false
         },
         {
-            "name": "Matematik C",
+            "name": "Historia 1b",
             "points": 100,
             "grade": "F",
             "required": false
         },
         {
-            "name": "Engelska D",
+            "name": "Idrott och hälsa 1",
             "points": 100,
+            "grade": "F",
+            "required": false
+        },
+        {
+            "name": "Matematik 1b",
+            "points": 100,
+            "grade": "F",
+            "required": true
+        },
+        {
+            "name": "Matematik 2b",
+            "points": 100,
+            "grade": "F",
+            "required": false
+        },
+        {
+            "name": "Naturkunskap 1b",
+            "points": 100,
+            "grade": "F",
+            "required": false
+        },
+        {
+            "name": "Religionskunskap 1",
+            "points": 50,
+            "grade": "F",
+            "required": false
+        },
+        {
+            "name": "Samhällskunskap 1b",
+            "points": 100,
+            "grade": "F",
+            "required": false
+        },
+        {
+            "name": "Svenska 1 / Svenska som andraspråk 1",
+            "points": 100,
+            "grade": "F",
+            "required": true
+        },
+        {
+            "name": "Svenska 2 / Svenska som andraspråk 2",
+            "points": 100,
+            "grade": "F",
+            "required": false
+        },
+        {
+            "name": "Svenska 3 / Svenska som andraspråk 3",
+            "points": 100,
+            "grade": "F",
+            "required": false
+        },
+        {
+            "name": "Filosofi 1",
+            "points": 50,
+            "grade": "F",
+            "required": false
+        },
+        {
+            "name": "Psykologi 1",
+            "points": 50,
+            "grade": "F",
+            "required": false
+        },
+        {
+            "name": "Moderna språk",
+            "points": 200,
             "grade": "F",
             "required": false
         }
