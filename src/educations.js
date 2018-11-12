@@ -67,7 +67,7 @@ export default {
             "required": false
         },
         {
-            "name": "Svenska 1 / Svenska som andraspråk 1",
+            "name": "Svenska 3 / Svenska som andraspråk 3",
             "points": 100,
             "grade": "F",
             "required": false
