@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/grade-calculator/static/js/runtime~main.31a3077a.js"
   },
   {
-    "revision": "822af4b49da002e37ef0",
-    "url": "/grade-calculator/static/js/main.822af4b4.chunk.js"
+    "revision": "15a0ba2220d8e5b20eaf",
+    "url": "/grade-calculator/static/js/main.15a0ba22.chunk.js"
   },
   {
     "revision": "ad4591f84e9b761fa829",
     "url": "/grade-calculator/static/js/1.ad4591f8.chunk.js"
   },
   {
-    "revision": "822af4b49da002e37ef0",
-    "url": "/grade-calculator/static/css/main.38618b38.chunk.css"
+    "revision": "15a0ba2220d8e5b20eaf",
+    "url": "/grade-calculator/static/css/main.27de5d60.chunk.css"
   },
   {
-    "revision": "6586be957a683dbce27e612f2b0988aa",
+    "revision": "e18a3e451f6429b5fa66e43fd9c8f514",
     "url": "/grade-calculator/index.html"
   }
 ];
