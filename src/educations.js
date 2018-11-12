@@ -28,7 +28,7 @@ export default {
             "name": "Matematik 1c",
             "points": 100,
             "grade": "F",
-            "required": false
+            "required": true
         },
         {
             "name": "Matematik 2c",
@@ -55,19 +55,19 @@ export default {
             "required": false
         },
         {
-            "name": "Svenska 1",
+            "name": "Svenska 1 / Svenska som andraspråk 1",
+            "points": 100,
+            "grade": "F",
+            "required": true
+        },
+        {
+            "name": "Svenska 2 / Svenska som andraspråk 2",
             "points": 100,
             "grade": "F",
             "required": false
         },
         {
-            "name": "Svenska 2",
-            "points": 100,
-            "grade": "F",
-            "required": false
-        },
-        {
-            "name": "Svenska 3",
+            "name": "Svenska 1 / Svenska som andraspråk 1",
             "points": 100,
             "grade": "F",
             "required": false

@@ -97,7 +97,8 @@ select {
 
 .grid {
   display: grid; 
-  grid-gap: 10px;
+  grid-gap: 20px;
+  font-size: 20px;
 } 
 
 .floatRight {

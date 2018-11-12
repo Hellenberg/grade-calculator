@@ -1,8 +1,8 @@
 .calculatedGrade {
     display: grid;
     grid-gap: 20px;
-    grid-template-rows: 34px;
     font-size: 20px;
+    width: 520px;
   }
 
   .merit-points {
@@ -13,3 +13,13 @@
     width: 50px;
     float: right;
   }
+
+.danger {
+  background-color: #ffdddd;
+  border-left: 6px solid #f44336;
+  width: 100%;
+}
+
+p{
+  padding: 15px;
+}

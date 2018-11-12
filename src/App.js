@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import fetch from 'node-fetch';
 
 import './App.css';
-import {CalculatedGrade} from './CalculatedGrade';
+import { CalculatedGrade } from './CalculatedGrade';
 import educationData from './educations';
 
 class Course extends Component {
@@ -21,7 +20,7 @@ class Course extends Component {
                 </select>
                 </div>
                 <div>
-                    <button className='small-button'  onClick={() => this.props.delete()}><i className='item far fa-trash-alt'></i></button>
+                    <button className='small-button' onClick={() => this.props.delete()}><i className='item far fa-trash-alt'></i></button>
                 </div>
             </div>
         )
@@ -40,7 +39,9 @@ class Courses extends Component {
             selected: 'Naturvetenskapsprogrammet',
             calculatedGrade: false,
             meritPoints: 0,
-            totalGrade: 0
+            totalGrade: 0,
+            isQualified: false,
+            passedPoints: 0
         };
         this.handleEducationChange = this.handleEducationChange.bind(this);
         this.handleCourseChange = this.handleCourseChange.bind(this);
@@ -99,7 +100,7 @@ class Courses extends Component {
         }
 
         if (event.target.alt === 'Antal poäng') {
-            course.points = event.target.value;
+            course.points = Number(event.target.value);
         }
         else if (event.target.alt === 'Kursnamn') {
             course.name = event.target.value;
@@ -156,36 +157,53 @@ class Courses extends Component {
     calculateGrade() {
         let totalPoints = 0;
         let totalGradePoints = 0;
+        let isQualified = true;
+        let passedPoints = 0;
         for (let course of this.state.courses) {
             totalPoints += course.points;
             switch (course.grade) {
                 case 'A':
                     totalGradePoints += course.points * 20;
+                    passedPoints += course.points;
                     break;
                 case 'B':
                     totalGradePoints += course.points * 17.5;
+                    passedPoints += course.points;
                     break;
                 case 'C':
                     totalGradePoints += course.points * 15;
+                    passedPoints += course.points;
                     break;
                 case 'D':
                     totalGradePoints += course.points * 12.5;
+                    passedPoints += course.points;
                     break;
                 case 'E':
                     totalGradePoints += course.points * 10;
+                    passedPoints += course.points;
+                    break;
+                case 'F':
+                    if (course.required ) {
+                        isQualified = false;
+                    }
                     break;
                 default:
-                    totalGradePoints += course.points * 0;
                     break;
             }
         }
         const grade = totalGradePoints / totalPoints;
         console.log('merit', this.state.meritPoints);
         const totalGrade = grade + this.state.meritPoints;
-        this.setState({ 
+        console.log(this.state);
+        if(passedPoints < 0.9 * 2500){
+            isQualified = false;
+        }
+        this.setState({
             calculatedGrade: grade,
-            totalGrade: totalGrade
-         });
+            totalGrade: totalGrade,
+            isQualified: isQualified,
+            passedPoints: passedPoints,
+        });
     }
     renderCalculatedGrade() {
         if (this.state.calculatedGrade !== false) {
@@ -193,7 +211,8 @@ class Courses extends Component {
                 grade={this.state.calculatedGrade}
                 meritPoints={this.state.meritPoints}
                 totalGrade={this.state.totalGrade}
-                handleMeritPointsChange={(event) => this.handleMeritPointsChange(event)}
+                isQualified={this.state.isQualified}
+                passedPoints={this.state.passedPoints}
             />)
         } else {
             return;
@@ -202,7 +221,7 @@ class Courses extends Component {
     render() {
         return (
             <div className='center'>
-                    <div className="grid card">
+                <div className="grid card">
                     <div>
                         Välj program:
                         <select className='margin floatRight' value={this.state.selected} onChange={this.handleEducationChange}>
@@ -216,6 +235,10 @@ class Courses extends Component {
                     </div>
                     <div>
                         <button className='small-button floatRight' onClick={() => this.addCourse()}><i className="fas fa-plus"></i></button>
+                    </div>
+                    <div>
+                        Lägg till meritpoäng:
+                        <input className='merit-points' alt='Antal poäng' type='number' min="0" max="2.5" value={this.state.meritPoints} onChange={this.handleMeritPointsChange}></input>
                     </div>
                     <div>
                         <hr></hr>
