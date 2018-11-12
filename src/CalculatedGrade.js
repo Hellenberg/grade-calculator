@@ -28,12 +28,12 @@ export class CalculatedGrade extends Component {
                 </div>
                 <div>
                     <div>
-                        Klarade poäng:  <span className='floatRight'>{this.props.passedPoints}</span>
+                        Klarade gymnasiepoäng:  <span className='floatRight'>{this.props.passedPoints}</span>
                     </div>
                 </div>
                 <div>
                     <div>
-                        Ditt meritvärde är: <span className='floatRight'>{Math.round(this.props.grade * 10) / 10}</span>
+                        Ditt jämförelsetal är: <span className='floatRight'>{Math.round(this.props.grade * 10) / 10}</span>
                     </div>
                 </div>
                 <div>
