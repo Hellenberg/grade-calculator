@@ -1,31 +1,11 @@
 import React, { Component } from 'react';
 
 import './App.css';
-import { CalculatedGrade } from './CalculatedGrade';
+import CalculatedGrade from './CalculatedGrade';
+import Course from './Course';
 import educationData from './educations';
 
-class Course extends Component {
-    render() {
-        return (
-            <div className='course'>
-                <div><input alt='Kursnamn' className='name' type='text' value={this.props.course.name} onChange={this.props.handleCourseChange} /></div>
-                <div><input alt='Antal poäng' type='number' min="0" max="200" value={this.props.course.points} onChange={this.props.handleCourseChange} /></div>
-                <div><select name='Betyg' value={this.props.course.grade} onChange={this.props.handleCourseChange}>
-                    <option value='A'>A</option>
-                    <option value='B'>B</option>
-                    <option value='C'>C</option>
-                    <option value='D'>D</option>
-                    <option value='E'>E</option>
-                    <option value="F">F</option>
-                </select>
-                </div>
-                <div>
-                    <button className='small-button' onClick={() => this.props.delete()}><i className='item far fa-trash-alt'></i></button>
-                </div>
-            </div>
-        )
-    };
-}
+
 
 class Courses extends Component {
     constructor(props) {
@@ -131,6 +111,7 @@ class Courses extends Component {
             course={this.state.courses[i]}
             delete={() => this.delete(i)}
             handleCourseChange={(event) => this.handleCourseChange(event, i)}
+            values={this.state.courses[i].name !== 'Gymnasiearbete' ? ['A', 'B', 'C', 'D', 'E', 'F']  : ['E', 'F']}
         />
     }
 
@@ -147,7 +128,7 @@ class Courses extends Component {
                     <div>
                         Betyg
                     </div>
-                </div>
+                </div> 
                 {this.state.courses.map((name, index) => {
                     return <div key={index}>{this.renderCourse(index)}</div>
                 })}
@@ -160,35 +141,41 @@ class Courses extends Component {
         let isQualified = true;
         let passedPoints = 0;
         for (let course of this.state.courses) {
-            totalPoints += course.points;
-            switch (course.grade) {
-                case 'A':
-                    totalGradePoints += course.points * 20;
-                    passedPoints += course.points;
-                    break;
-                case 'B':
-                    totalGradePoints += course.points * 17.5;
-                    passedPoints += course.points;
-                    break;
-                case 'C':
-                    totalGradePoints += course.points * 15;
-                    passedPoints += course.points;
-                    break;
-                case 'D':
-                    totalGradePoints += course.points * 12.5;
-                    passedPoints += course.points;
-                    break;
-                case 'E':
-                    totalGradePoints += course.points * 10;
-                    passedPoints += course.points;
-                    break;
-                case 'F':
-                    if (course.required ) {
-                        isQualified = false;
-                    }
-                    break;
-                default:
-                    break;
+            if (course.name ==='Gymnasiearbete'){
+                if (course.grade === 'F') {
+                    isQualified = false;
+                }
+            } else {
+                totalPoints += course.points;
+                switch (course.grade) {
+                    case 'A':
+                        totalGradePoints += course.points * 20;
+                        passedPoints += course.points;
+                        break;
+                    case 'B':
+                        totalGradePoints += course.points * 17.5;
+                        passedPoints += course.points;
+                        break;
+                    case 'C':
+                        totalGradePoints += course.points * 15;
+                        passedPoints += course.points;
+                        break;
+                    case 'D':
+                        totalGradePoints += course.points * 12.5;
+                        passedPoints += course.points;
+                        break;
+                    case 'E':
+                        totalGradePoints += course.points * 10;
+                        passedPoints += course.points;
+                        break;
+                    case 'F':
+                        if (course.required ) {
+                            isQualified = false;
+                        }
+                        break;
+                    default:
+                        break;
+                }
             }
         }
         const grade = totalGradePoints / totalPoints;

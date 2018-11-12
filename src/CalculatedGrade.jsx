@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './CalculatedGrade.css';
 
-export class CalculatedGrade extends Component {
+class CalculatedGrade extends Component {
 
 
     renderIsQualified(isQualified) {
@@ -46,3 +46,5 @@ export class CalculatedGrade extends Component {
         )
     };
 }
+
+export default CalculatedGrade;

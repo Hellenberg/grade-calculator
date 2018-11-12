@@ -95,6 +95,12 @@ export default {
             "points": 100,
             "grade": "F",
             "required": false
+        },
+        {
+            "name": "Gymnasiearbete",
+            "points": 100,
+            "grade": "F",
+            "required": true
         }
     ],
     "Samhällsvetenskapsprogrammet": [
@@ -187,6 +193,12 @@ export default {
             "points": 200,
             "grade": "F",
             "required": false
+        },
+        {
+            "name": "Gymnasiearbete",
+            "points": 100,
+            "grade": "F",
+            "required": true
         }
     ]
 }
